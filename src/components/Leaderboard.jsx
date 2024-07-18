@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AddScorePopup from "./AddScorePopup";
 
+// dummy data for testing purposes
 const initialScores = [
   { username: "Player6", score: "01:40:100" },
   { username: "Player2", score: "01:22:300" },
@@ -22,7 +23,6 @@ const initialScores = [
   { username: "Player17", score: "02:35:200" },
   { username: "Player18", score: "02:40:300" },
   { username: "Player5", score: "01:35:500" },
-  // Add more dummy data...
 ];
 
 const parseScore = (score) => {
@@ -31,30 +31,32 @@ const parseScore = (score) => {
 };
 
 const Leaderboard = () => {
-  const [scores, setScores] = useState([]);
+  const [scores, setScores] = useState(initialScores);
+  const [showScores, setShowScores] = useState([]);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   useEffect(() => {
-    const sortedScores = initialScores
-      .sort((a, b) => {
-        return parseScore(a.score) - parseScore(b.score);
-      })
-      .slice(0, 10);
+    const sortedScores = scores.sort((a, b) => {
+      return parseScore(a.score) - parseScore(b.score);
+    });
     setScores(sortedScores);
+    setShowScores(sortedScores.slice(0, 10));
   }, []);
 
   const addScore = (newScore) => {
-    const updatedScores = [...scores, newScore]
-      .sort((a, b) => {
-        return parseScore(a.score) - parseScore(b.score);
-      })
-      .slice(0, 10);
+    const updatedScores = [...scores, newScore].sort((a, b) => {
+      return parseScore(a.score) - parseScore(b.score);
+    });
     setScores(updatedScores);
+    setShowScores(updatedScores.slice(0, 10));
+    console.log("length ", scores.length);
   };
 
   return (
     <div className="leaderboard">
-      <h1>Top 10 Scores</h1>
+      <header>
+        <h1>FASTEST OF TODAY</h1>
+      </header>
       <ul className="score-list">
         <li className="score-item score-heading">
           <span className="rank">Rank</span>
@@ -62,8 +64,8 @@ const Leaderboard = () => {
           <span className="score">Score</span>
         </li>
         <div className="scores">
-          {scores.map((entry, index) => (
-            <li key={index} className="score-item">
+          {showScores.map((entry, index) => (
+            <li key={index} className={`score-item ${index < 3 ? "top3" : ""}`}>
               <span className="rank">{index + 1}</span>
               <span className="username">{entry.username}</span>
               <span className="score">{entry.score}</span>
@@ -71,13 +73,24 @@ const Leaderboard = () => {
           ))}
         </div>
       </ul>
-      <button onClick={() => setIsPopupVisible(true)}>Add Score</button>
-      {isPopupVisible && (
-        <AddScorePopup
-          addScore={addScore}
-          closePopup={() => setIsPopupVisible(false)}
-        />
-      )}
+      <div className="recent-entry">
+        <h2>RECENT ENTRY</h2>
+        <p>
+          PlayerName :{" "}
+          {scores.length == initialScores.length
+            ? "Please enter new user score"
+            : scores[0].username}
+        </p>
+      </div>
+      <footer>
+        <button onClick={() => setIsPopupVisible(true)}>Add Score</button>
+        {isPopupVisible && (
+          <AddScorePopup
+            addScore={addScore}
+            closePopup={() => setIsPopupVisible(false)}
+          />
+        )}
+      </footer>
     </div>
   );
 };
