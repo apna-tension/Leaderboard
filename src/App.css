@@ -1,40 +1,43 @@
-/* General Styles */
+
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   color: whitesmoke;
-  background-color: #1f1e1e;
+  background-image: url('components/banner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
-/* Leaderboard Styles */
 .leaderboard {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #1E1E1E;
-  border: 1px solid #1f3433eb;
+  background: rgba(255, 255, 255, 0.1); /* Lightly frosted glass effect */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 
-.leaderboard h1 {
+.leaderboard header h1 {
   text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .scores {
-  max-height: 300px; /* Set a fixed height */
-  overflow-y: auto; /* Enable vertical scrollbar */
+  max-height: 300px; 
+  overflow-y: auto; 
   padding: 10px;
-  background-color: #2a2a2a;
-  border: 1px solid #1f3433eb;
+  background: rgba(255, 255, 255, 0.1); /* Lightly frosted glass effect */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-}
-
-
-.score-heading {
-  font-weight: bold;
-  border-bottom: 2px solid #000;
 }
 
 .score-list {
@@ -47,12 +50,13 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  border-bottom: 1px solid #eee;
-  border-bottom: 1px solid #453d3d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.score-heading {
-  border-bottom-color: #1E1E1E;
+.score-item.top3 {
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.1); /* Lightly frosted glass effect */
+  /* backdrop-filter: blur(10px); */
 }
 
 .score-item .rank,
@@ -62,21 +66,27 @@ body {
   text-align: center;
 }
 
-.score-item .rank {
-  flex-basis: 10%;
+.score-heading {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
-.score-item .username {
-  flex-basis: 45%;
+.recent-entry {
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1); /* Lightly frosted glass effect */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  text-align: center;
 }
 
-.score-item .score {
-  flex-basis: 45%;
+.leaderboard footer {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .leaderboard button {
-  display: block;
-  margin: 20px auto;
+  display: inline-block;
   padding: 10px 20px;
   background: #007bff;
   color: #fff;
@@ -89,21 +99,23 @@ body {
   background: #0056b3;
 }
 
-/* Add Score Popup Styles */
 .popup {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #fff;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.9); /* Slightly frosted glass effect */
+  backdrop-filter: blur(10px);
+  color: rgb(50, 48, 48);
+  padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .popup form {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .popup label {
@@ -138,3 +150,4 @@ body {
 .popup button[type="button"]:hover {
   background: #5a6268;
 }
+
