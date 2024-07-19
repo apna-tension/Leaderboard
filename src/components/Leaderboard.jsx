@@ -78,7 +78,7 @@ const Leaderboard = () => {
         <p>
           PlayerName :{" "}
           {scores.length == initialScores.length
-            ? "Please enter new user score"
+            ? "Please enter new Player score"
             : scores[0].username}
         </p>
       </div>
