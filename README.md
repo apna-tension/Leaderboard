@@ -20,10 +20,6 @@ This project is a dynamic and interactive leaderboard built using ReactJS. The l
 - **JavaScript**: Logic for the application.
 - **Firebase/Heroku**: Hosting the project.
 
-## Installation
+## Run development server
 
-To run this project locally, follow these steps:
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/your-username/leaderboard-project.git
+To run this project locally, - npm run dev
