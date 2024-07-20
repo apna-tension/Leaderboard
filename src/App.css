@@ -17,7 +17,7 @@ body {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.1); /* Lightly frosted glass effect */
+  background: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
@@ -31,11 +31,25 @@ body {
   margin-bottom: 20px;
 }
 
+
+.score-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+  background: rgba(255, 255, 255, 0.1); 
+  border-radius: 8px;
+  margin-bottom: 1px;
+}
+
+
+
+
 .scores {
   max-height: 300px; 
   overflow-y: auto; 
   padding: 10px;
-  background: rgba(255, 255, 255, 0.1); /* Lightly frosted glass effect */
+  background: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
@@ -56,7 +70,7 @@ body {
 
 .score-item.top3 {
   font-weight: bold;
-  background: rgba(255, 255, 255, 0.1); /* Lightly frosted glass effect */
+  background: rgba(255, 255, 255, 0.1); 
   /* backdrop-filter: blur(10px); */
 }
 
@@ -67,14 +81,10 @@ body {
   text-align: center;
 }
 
-.score-heading {
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-}
-
 .recent-entry {
   margin-top: 20px;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.1); /* Lightly frosted glass effect */
+  background: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
@@ -99,6 +109,11 @@ body {
 .leaderboard button:hover {
   background: #0056b3;
 }
+
+
+/* --------------------------------------------------------------------------- */
+/* style for popup */
+
 
 .popup {
   position: fixed;
@@ -154,9 +169,7 @@ body {
 
 
 /* --------------------------------------------------------------------------- */
-
-
-/* Add these at the end of your App.css */
+/* style for animation */
 
 @keyframes fadeInUp {
   0% {
