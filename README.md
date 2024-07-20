@@ -20,6 +20,18 @@ This project is a dynamic and interactive leaderboard built using ReactJS. The l
 - **JavaScript**: Logic for the application.
 - **Firebase/Heroku**: Hosting the project.
 
-## Run development server
 
-To run this project locally, - npm run dev
+## Dependencies
+
+- **React**: JavaScript library for building user interfaces.
+- **React-DOM**: Provides DOM-specific methods that can be used at the top level of the app.
+- **React-Scripts**: Scripts and configuration used by Create React App.
+- **react-confetti**: A lightweight React component for rendering confetti.
+- **react-transition-group**: A set of components for managing component states.
+- **react-redux**: Official React bindings for Redux.
+- **redux**: A predictable state container for JavaScript apps.
+- **react-icons**: Popular icons for React projects.
+
+## Run development server
+before run the development server you need to install the dependencies by running `npm install` in the root directory.
+To run this project locally, - `npm run dev`
