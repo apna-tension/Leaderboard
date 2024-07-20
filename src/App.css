@@ -152,3 +152,62 @@ body {
   background: #5a6268;
 }
 
+
+/* --------------------------------------------------------------------------- */
+
+
+/* Add these at the end of your App.css */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes highlight {
+  0% {
+    background-color: rgba(0, 128, 0, 0.3);
+  }
+  100% {
+    background-color: rgba(0, 128, 0, 0);
+  }
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 600ms, transform 600ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 600ms, transform 600ms;
+}
+
+.score-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeInUp 600ms ease-out;
+}
+
+.score-item.highlighted {
+  animation: highlight 1s ease-out;
+}
